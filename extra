@@ -1,0 +1,112 @@
+pacakge.json
+npm => node package manger
+
+=> Json
+Javascript object notation
+Key value pair
+[
+    {
+        name:"a",
+        class:"node"
+    },
+    {
+        name:"b",
+        class:"UI"
+    }
+]
+
+var a = [1,2,3,5]
+var b = [ "dv", "g", "ge"]
+
+var c = [1,2,"D","vd",4,"ds",true]
+
+string = "d","34", "dv" "true"
+number= 878789
+boolean= true / false
+
+
+=> npm init
+=> npm init --yes
+package name: (first) dummy
+version: (1.0.0)
+description: this is dummy app
+entry point: (index.js)
+test command:
+git repository:
+keywords: node npm
+author: nareshit
+license: (ISC)
+
+/*===============================*/
+Dependency || node module || package
+
+local
+global
+
+npm install --save body-parser 
+npm install --save body-parser@1.17.0
+
+sudo npm install -g nodemon
+
+run cmd as admin
+npm install -g nodemon
+
+npm install
+npm start
+
+
+let 
+const
+
+
+var a = 10
+undefined
+a
+10
+var a = 20
+undefined
+a
+20
+let b = 10
+undefined
+b
+10
+let b = 20
+VM89:1 Uncaught SyntaxError: Identifier 'b' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM89:1
+b = 20
+20
+const c =10
+undefined
+const c =10\1
+VM126:1 Uncaught SyntaxError: Invalid or unexpected token
+const c =11
+VM135:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM135:1
+c =11
+VM148:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:3
+
+
+///////////
+function add(a,b){
+    return a+b
+}
+
+const add = (a,b) => { return a+b}
+
+
+////
+=>first time
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/FEB_NODE_MRNG.git
+git push -u origin master
+
+=>second
+git add .
+git commit -m "first commit"
+git push -u origin master
