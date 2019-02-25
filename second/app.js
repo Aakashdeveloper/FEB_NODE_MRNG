@@ -1,4 +1,5 @@
-const http = require('http');
+//const http = require('http');
+import http from 'http';
 
 let server = http.createServer((req,res) => {
     res.write("<h1>Welcome to node git</h1>");

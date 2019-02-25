@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon server.js",
-    "dev":"nodemon app.js",
+    "start": "nodemon server.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +14,11 @@
   "dependencies": {
     "body-parser": "^1.18.0",
     "zone.js": "^0.8.29"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "babel-polyfill": "^6.26.0"
   }
 }

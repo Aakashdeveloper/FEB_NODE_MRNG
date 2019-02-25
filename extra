@@ -110,3 +110,20 @@ git push -u origin master
 git add .
 git commit -m "first commit"
 git push
+
+
+// Day4 
+@babel/core
+@babel/preset-env
+babel-polyfill
+@babel/register
+npm install @babel/preset-env babel-polyfill @babel/register --save-dev
+
+Es5
+var a  = 10
+var b = "my age is "+ a
+my age is 20
+
+Es6
+var c = `my age is ${a}`
+my age is 20
