@@ -3,13 +3,21 @@ import express from 'express';
 const app = express();
 const port = '6789';
 app.get('/', (req,res) => {
-    res.send({name:'aa'});
-    /*fs.readFile('myText.txt',(err,data) => {
+    //res.send({name:'aa'});
+    fs.readFile('myText.txt','utf-8',(err,data) => {
         if(err) throw err;
-        console.log(data.toString())
-    })*/
+        res.send(data)
+    })
     
 })
+
+app.get('/products',(req,res) => {
+    fs.readFile('db.json',(err,data) => {
+        if(err) throw err;
+        res.send(JSON.parse(data));
+    })
+})
+
 app.listen(port,(err)=>{
     if(err) throw err;
     console.log(`Server is running on port ${port}`);
