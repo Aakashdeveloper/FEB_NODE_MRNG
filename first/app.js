@@ -1,8 +1,12 @@
 import express from 'express';
 const app = express();
 const port = '8900';
-const moviesRouter = express.Router();
-const artistRouter = express.Router();
+
+// Es5 
+// const moviesRouter = require('./src/routes/moviesRoute');
+// Es6
+import moviesRouter from './src/routes/moviesRoute';
+import artistRouter from './src/routes/artistRoute';
 
 // Static file path
 app.use(express.static(__dirname+'/public'));
@@ -17,30 +21,6 @@ const menu = [
     {link:'/artist', name:'Artist'}
 ]
 
-moviesRouter.route('/')
-        .get((req,res) => {
-            res.render('movies',{title:'Movies Page', 
-                        menu});
-});
-
-artistRouter.route('/')
-        .get((req,res) => {
-            res.render('artist',{title:'Artist Page', 
-                        menu});
-});
-
-moviesRouter.route('/details')
-        .get((req,res) => {
-            res.render('details',{title:'Detail Movies', 
-                        menu});
-});
-
-artistRouter.route('/details')
-        .get((req,res) => {
-            res.render('details',{title:'Detail Artist', 
-                        menu});
-});
-
 
 app.use('/movies',moviesRouter);
 app.use('/artist',artistRouter);
@@ -53,19 +33,3 @@ app.get('/', (req,res) => {
 app.listen(port, ()=> {
     console.log(`Server is running on port ${port}`);
 })
-
-
-
-
-/*
-app.get('/', (req,res) => {
-    res.render('index',{title:"HomePage",
-                        menu:navbar});
-});
-
-app.get('/movies',(req,res) => {
-    res.render('movies',{title:'Movies Page', 
-                        menu:navbar});
-});
-
-*/
