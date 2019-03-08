@@ -1,6 +1,7 @@
 import path from 'path';
 import url from 'url';
 import util from 'util';
+import {fstack} 
 
 
 let outurl = url.parse('http://ngapi4.herokuapp.com/api/getProducts?name="aa"')

@@ -5,6 +5,7 @@ const port = '6789';
 app.get('/', (req,res) => {
     //res.send({name:'aa'});
     fs.readFile('myText.txt','utf-8',(err,data) => {
+        fs.fstat();
         if(err) throw err;
         res.send(data)
     })

@@ -1,12 +1,6 @@
 import express from 'express';
 const moviesRouter = express.Router();
 
-const menu = [
-    {link:'/',name:'Home'}, 
-    {link:'/movies',name:'Movies'},
-    {link:'/artist', name:'Artist'}
-]
-
 const movies = [
     {
       "_id": "5ab12612f36d2879268f284a",
@@ -66,16 +60,21 @@ const movies = [
     }
   ]
 
-moviesRouter.route('/')
+function router(menu){
+  moviesRouter.route('/')
   .get((req,res) => {
       res.render('movies',{title:'Movies Page', 
                   menu, movies});
-});
+  });
 
-moviesRouter.route('/details')
-        .get((req,res) => {
-            res.render('details',{title:'Detail Movies', 
-                        menu});
-});
+  moviesRouter.route('/details')
+          .get((req,res) => {
+              res.render('details',{title:'Detail Movies', 
+                          menu});
+  });
 
-module.exports = moviesRouter;
+  return moviesRouter;
+}
+
+
+module.exports = router;

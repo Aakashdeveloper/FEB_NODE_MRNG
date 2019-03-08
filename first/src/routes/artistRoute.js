@@ -1,25 +1,23 @@
 import express from 'express';
 const artistRouter = express.Router();
 
-const menu = [
-    {link:'/',name:'Home'}, 
-    {link:'/movies',name:'Movies'},
-    {link:'/artist', name:'Artist'}
-]
+
+function router(nav){
+    artistRouter.route('/')
+    .get((req,res) => {
+        res.render('artist',{title:'Artist Page', 
+                    menu:nav});
+    });
 
 
-
-artistRouter.route('/')
-        .get((req,res) => {
-            res.render('artist',{title:'Artist Page', 
-                        menu});
-});
-
-
-artistRouter.route('/details')
+    artistRouter.route('/details')
         .get((req,res) => {
             res.render('details',{title:'Detail Artist', 
-                        menu});
-});
+                        menu:nav});
+    });
 
-module.exports = artistRouter;
+    return artistRouter;
+}
+
+
+module.exports = router;
