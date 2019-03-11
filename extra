@@ -134,3 +134,71 @@ https://github.com/Aakashdeveloper/Jan_UI
 https://www.mongodb.com/download-center/community
 
 data/db
+
+sudo lsof -i :<port>
+Kill the process which is currently using the port using its PID
+
+sudo kill -9 PID
+
+
+//
+netstat -ano | findstr :yourPortNumber
+taskkill /PID typeyourPIDhere /F 
+
+
+startMongo
+> mongod
+> mongo
+
+
+/////
+to check db
+
+SQL           Mongo
+Databas       Database
+Tables        Collections
+Row           Document
+
+show dbs 
+use ProductApp
+show collections
+
+
+
+Sno   Maths    English   Computers
+1      80       ------      ---
+2     -----       80        ---
+3     --          --        90
+
+[
+    {
+        sno:1
+        maths:80
+    },
+    {
+        sno:2
+        English:80
+    },
+    {
+        sno:3
+        Computers:90
+    }
+]
+
+db.ProductApp.find()
+db.Products.find().pretty()
+db.Products.find({productId:5,productName:'Hammer'}).pretty()
+
+
+> use javarnd
+switched to db javarnd
+> show collections
+cities
+> db.dropDatabase()
+{ "dropped" : "javarnd", "ok" : 1 }
+
+db.Products.inser({name:"a"})
+db.Products.find({},{productName:1,price:1})
+db.Product.remove({name:"a"})
+
+CRUD
