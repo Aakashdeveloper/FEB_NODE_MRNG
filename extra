@@ -202,3 +202,90 @@ db.Products.find({},{productName:1,price:1})
 db.Product.remove({name:"a"})
 
 CRUD
+
+
+db.collection.insertMany(
+   [ 
+    {"_id": "5ab12612f36d2879268f284a",
+    "name": "Black Panther",
+    "language": "ENGLISH",
+    "rate": 4.5,
+    "type": "Action Adventure Fantasy",
+    "imageUrl": "https://image.ibb.co/f0hhZc/bp.jpg"
+  },
+  {
+    "_id": "5ab12666f36d2879268f2902",
+    "name": "Death Wish",
+    "language": "ENGLISH",
+    "type": "Action Crime Thriller",
+    "rate": 3.2,
+    "imageUrl": "https://image.ibb.co/gC9PfH/dw.jpg"
+  },
+  {
+    "_id": "5ab12678f36d2879268f291d",
+    "name": "Coco",
+    "language": "ENGLISH",
+    "type": "Adventure Animation Family",
+    "rate": 5,
+    "imageUrl": "https://image.ibb.co/dQwWSx/coco.jpg"
+  }]
+)
+
+
+
+db.collection.insert({
+	"_id" : "5ab12612f36d2879268f284ab",
+	"name" : "Black Panther",
+	"language" : "ENGLISH",
+	"rate" : 4.5,
+	"type" : "Action Adventure Fantasy",
+	"imageUrl" : "https://image.ibb.co/f0hhZc/bp.jpg"
+})
+
+db.collection.update({rate:5},{$set:{rate:3}},{multi:true},{upsert:true})
+db.collection.update({rate:2},{$set:{rate:3}},{upsert:true})
+
+
+ db.collection.findOne({rate:4.5})
+ db.collection.find().limit(2).pretty()
+ db.collection.find().sort({rate:-1}).pretty()
+
+
+ db.collection.insert(
+     {
+	"_id" : "5ab12612f36d2879268f28a",
+	"name" : "Black Panther",
+	"language" : "Hindi",
+	"rate" : 3.1,
+	"type" : "Action Adventure Fantasy",
+	"imageUrl" : "https://image.ibb.co/f0hhZc/bp.jpg"
+}
+ )
+
+ db.collection.find({language:"ENGLISH"},{name:1,rate:1,language:1,_id:0}).skip(1).sort({rate:-1}).limit(2).pretty()
+{ "name" : "Death Wish", "language" : "ENGLISH", "rate" : 3.2 }
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 3 }
+> db.collection.find({name:"Black Panther"},{name:1,rate:1,language:1,_id:0}).skip(1).sort({rate:-1}).limit(2).pretty()
+{ "name" : "Black Panther", "language" : "Hindi", "rate" : 3.1 }
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 3 }
+> db.collection.find({name:"Black Panther"},{name:1,rate:1,language:1,_id:0}).sort({rate:-1}).limit(2).pretty()
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 4.5 }
+{ "name" : "Black Panther", "language" : "Hindi", "rate" : 3.1 }
+> db.collection.find({name:"Black Panther"},{name:1,rate:1,language:1,_id:0}).sort({rate:-1}).pretty()
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 4.5 }
+{ "name" : "Black Panther", "language" : "Hindi", "rate" : 3.1 }
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 3 }
+> db.collection.find({name:"Black Panther"},{name:1,rate:1,language:1,_id:0}).sort({rate:-1}).limit(2).pretty()
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 4.5 }
+{ "name" : "Black Panther", "language" : "Hindi", "rate" : 3.1 }
+> db.collection.find({name:"Black Panther"},{name:1,rate:1,language:1,_id:0}).sort({rate:-1}).limit(2).skip(1).pretty()
+{ "name" : "Black Panther", "language" : "Hindi", "rate" : 3.1 }
+{ "name" : "Black Panther", "language" : "ENGLISH", "rate" : 3 }
+> 
+
+
+url:https://ngmovies.herokuapp.com/api/getMovies
+https://ngapi4.herokuapp.com/api/getProducts
+
+
+https://github.com/Aakashdeveloper/mongodoc
