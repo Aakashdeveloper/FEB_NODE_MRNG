@@ -10,7 +10,7 @@ function router(nav){
     });
 
 
-    artistRouter.route('/details')
+    artistRouter.route('/:id')
         .get((req,res) => {
             res.render('details',{title:'Detail Artist', 
                         menu:nav});

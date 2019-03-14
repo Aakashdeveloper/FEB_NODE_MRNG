@@ -289,3 +289,27 @@ https://ngapi4.herokuapp.com/api/getProducts
 
 
 https://github.com/Aakashdeveloper/mongodoc
+
+
+
+city:[
+    name:"fG"
+    pop:34t,
+    language:[
+        firts:"dg",
+        secod:'dsv"
+    ]
+]
+
+
+{
+    name:'Delhi',
+    city:{
+        name:'abc'
+        lang:{
+            first:"v",
+            second:'df'
+        },
+        pincode: []
+    }
+}

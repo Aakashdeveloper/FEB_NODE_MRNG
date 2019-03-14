@@ -17,7 +17,7 @@ const menu = [
 
 const moviesRouter = require('./src/routes/moviesRoute')(menu);
 const artistRouter = require('./src/routes/artistRoute')(menu);
-app.use(morgan('common'));
+app.use(morgan('tiny'));
 // Static file path
 app.use(express.static(__dirname+'/public'));
 // Html or rending Path
