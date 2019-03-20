@@ -1,0 +1,22 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/register": "^7.4.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongod": "^2.0.0",
+    "mongodb": "^3.1.13"
+  }
+}
