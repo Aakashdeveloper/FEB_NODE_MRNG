@@ -1,0 +1,11 @@
+// Check remote
+git remote -v
+// For branch
+git checkout -b fileupload
+
+//For all branch
+git branch -a
+
+
+//Pull in new branch
+git branch --set-upstream-to = origin/fileupload

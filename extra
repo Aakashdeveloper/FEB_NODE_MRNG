@@ -317,3 +317,7 @@ city:[
 
 ///
 crud
+create = Post 
+read = get 
+update = put/patch
+d = delete
