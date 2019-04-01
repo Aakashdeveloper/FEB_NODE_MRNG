@@ -23,6 +23,7 @@ app.post('/addData', (req,res) => {
             if(err) throw err;
             console.log('data.inserted');
         })
+    res.redirect('/');
 })
 
 app.post('/find_by_name',(req,res) => {
@@ -67,6 +68,10 @@ app.get('/', (req,res)=>{
         console.log(outupt)
         res.render('index.ejs',{data:result})
     })
+})
+
+app.get('/new',(req,res) => {
+    res.render('admin')
 })
 
 /*app.listen(port, (err)=> {
