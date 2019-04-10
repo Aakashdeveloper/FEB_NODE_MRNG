@@ -324,3 +324,12 @@ d = delete
 
 {rate:'4.5'}
 {rate:4.5}
+
+npm i express express-graphql graphql lodash
+
+npm i @aakashdeveloper/create-node-app
+
+npm i -g json-server
+json-server --watch db.json --port 6700
+
+npm i chai chai-http mocha
